@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Concept mockup: IdeaFestival relaunched as a continuously published media property with a production studio attached.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💡</text></svg>">
+<title>IdeaFestival Reborn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400&display=swap">
+
+<style>
+  :root {
+    --paper:      #F3F2EE;
+    --surface:    #FAFAF7;
+    --ink:        #14161C;
+    --rule:       #DCDAD3;
+    --muted:      #6E7178;
+    --accent:     #C6402D;
+    --accent-2:   #2E5E4E;
+    --accent-strong: #A83420;
+    --accent-on-band: #E2664F;
+    --on-accent:  #FFFFFF;
+    --band-ink:   #14161C;
+    --band-text:  #EFEEE9;
+    --band-muted: #9DA1A8;
+    --shadow:     0 1px 2px rgba(20,22,28,.05), 0 8px 24px rgba(20,22,28,.05);
+
+    --step--1: clamp(.78rem, .76rem + .1vw, .84rem);
+    --step-0:  clamp(1rem, .97rem + .15vw, 1.075rem);
+    --step-1:  clamp(1.2rem, 1.12rem + .4vw, 1.45rem);
+    --step-2:  clamp(1.55rem, 1.38rem + .8vw, 2.1rem);
+    --step-3:  clamp(2.1rem, 1.75rem + 1.7vw, 3.4rem);
+    --step-4:  clamp(2.6rem, 1.9rem + 3.2vw, 5rem);
+
+    --maxw: 1180px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:      #101217;
+      --surface:    #171A20;
+      --ink:        #ECEBE6;
+      --rule:       #2A2D34;
+      --muted:      #9CA0A8;
+      --accent:     #E2664F;
+      --accent-2:   #6BA890;
+      --accent-strong: #B23E27;
+      --accent-on-band: #E2664F;
+      --on-accent:  #FFFFFF;
+      --band-ink:   #1B1F26;
+      --band-text:  #ECEBE6;
+      --band-muted: #9CA0A8;
+      --shadow:     0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper:      #101217;
+    --surface:    #171A20;
+    --ink:        #ECEBE6;
+    --rule:       #2A2D34;
+    --muted:      #9CA0A8;
+    --accent:     #E2664F;
+    --accent-2:   #6BA890;
+    --accent-strong: #B23E27;
+    --accent-on-band: #E2664F;
+    --on-accent:  #FFFFFF;
+    --band-ink:   #1B1F26;
+    --band-text:  #ECEBE6;
+    --band-muted: #9CA0A8;
+    --shadow:     0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.25);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    font-size: var(--step-0);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .wrap {
+    max-width: var(--maxw);
+    margin-inline: auto;
+    padding-inline: clamp(1.1rem, 4vw, 2.5rem);
+  }
+
+  .label {
+    font-size: var(--step--1);
+    font-weight: 600;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ---------- mockup notice ---------- */
+  .notice {
+    background: var(--accent-strong);
+    color: var(--on-accent);
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: .5rem 1rem;
+  }
+
+  /* ---------- masthead ---------- */
+  .masthead {
+    border-bottom: 1px solid var(--rule);
+    padding-block: clamp(1.75rem, 4vw, 2.75rem) 1.1rem;
+  }
+  .masthead-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem 2rem;
+  }
+  .wordmark {
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 500;
+    font-size: var(--step-4);
+    line-height: .92;
+    letter-spacing: -.025em;
+    margin: 0;
+  }
+  .wordmark .idea { color: var(--ink); }
+  .wordmark .festival { color: var(--accent); }
+  .tagline {
+    font-family: "Newsreader", Georgia, serif;
+    font-style: italic;
+    font-size: var(--step-1);
+    color: var(--muted);
+    margin: 0 0 .35rem;
+  }
+
+  nav.primary {
+    border-bottom: 1px solid var(--rule);
+  }
+  nav.primary ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(1.1rem, 3vw, 2.25rem);
+    list-style: none;
+    margin: 0;
+    padding-block: .85rem;
+  }
+  nav.primary a {
+    font-size: var(--step--1);
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+    transition: color .18s ease, border-color .18s ease;
+  }
+  nav.primary a:hover { color: var(--ink); border-bottom-color: var(--accent); }
+  nav.primary a[aria-current] { color: var(--ink); border-bottom-color: var(--accent); }
+
+  /* ---------- lead ---------- */
+  .lead {
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+    gap: clamp(1.75rem, 5vw, 4rem);
+    padding-block: clamp(2.5rem, 6vw, 4.5rem);
+    border-bottom: 1px solid var(--rule);
+  }
+  @media (max-width: 820px) { .lead { grid-template-columns: 1fr; } }
+
+  .kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+    font-size: var(--step--1);
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .kicker::before {
+    content: "";
+    width: 26px;
+    height: 2px;
+    background: var(--accent);
+  }
+
+  .lead h2 {
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 400;
+    font-size: var(--step-3);
+    line-height: 1.08;
+    letter-spacing: -.02em;
+    text-wrap: balance;
+    margin: 0 0 1.1rem;
+  }
+  .lead .standfirst {
+    font-family: "Newsreader", Georgia, serif;
+    font-size: var(--step-1);
+    line-height: 1.5;
+    color: var(--muted);
+    max-width: 34ch;
+    margin: 0 0 1.5rem;
+  }
+  .byline {
+    font-size: var(--step--1);
+    color: var(--muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    align-items: center;
+  }
+  .byline .dot { color: var(--rule); }
+
+  .lead-aside {
+    border-left: 1px solid var(--rule);
+    padding-left: clamp(1.25rem, 3vw, 2.25rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  @media (max-width: 820px) {
+    .lead-aside { border-left: 0; border-top: 1px solid var(--rule); padding-left: 0; padding-top: 1.75rem; }
+  }
+  .aside-item h3 {
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 400;
+    font-size: var(--step-1);
+    line-height: 1.22;
+    letter-spacing: -.01em;
+    margin: .4rem 0 .35rem;
+  }
+  .aside-item p {
+    margin: 0;
+    font-size: var(--step--1);
+    color: var(--muted);
+  }
+  .aside-item a:hover h3 { color: var(--accent); }
+
+  /* ---------- section heads ---------- */
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding-block: clamp(2.5rem, 5vw, 3.5rem) 1.5rem;
+  }
+  .section-head h2 {
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 400;
+    font-size: var(--step-2);
+    letter-spacing: -.015em;
+    margin: 0;
+  }
+  .section-head p {
+    margin: 0;
+    max-width: 46ch;
+    font-size: var(--step--1);
+    color: var(--muted);
+  }
+
+  /* ---------- beat grid ---------- */
+  .beat {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border-block: 1px solid var(--rule);
+    padding-bottom: 0;
+  }
+  .story {
+    background: var(--surface);
+    padding: clamp(1.35rem, 2.5vw, 1.9rem);
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+    min-height: 224px;
+    transition: background .18s ease;
+  }
+  .story:hover { background: var(--paper); }
+  .story .beat-label {
+    font-size: .7rem;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--accent-2);
+  }
+  .story h3 {
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 400;
+    font-size: var(--step-1);
+    line-height: 1.24;
+    letter-spacing: -.01em;
+    text-wrap: balance;
+    margin: 0;
+  }
+  .story p {
+    margin: 0;
+    font-size: var(--step--1);
+    color: var(--muted);
+  }
+  .story .meta {
+    margin-top: auto;
+    font-size: .72rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---------- studio band ---------- */
+  .studio {
+    background: var(--band-ink);
+    color: var(--band-text);
+    margin-top: clamp(3rem, 7vw, 5rem);
+  }
+  .studio-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 4.5rem);
+    padding-block: clamp(3rem, 7vw, 5rem);
+    align-items: start;
+  }
+  @media (max-width: 820px) { .studio-inner { grid-template-columns: 1fr; } }
+  .studio .label { color: var(--band-muted); }
+  .studio h2 {
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 300;
+    font-size: var(--step-3);
+    line-height: 1.1;
+    letter-spacing: -.02em;
+    text-wrap: balance;
+    margin: .9rem 0 0;
+  }
+  .studio h2 em { font-style: italic; color: var(--accent-on-band); }
+  .studio .body { color: var(--band-muted); max-width: 42ch; }
+  .studio .body p { margin: 0 0 1rem; }
+  .services {
+    display: grid;
+    gap: 1px;
+    background: rgba(255,255,255,.13);
+    border: 1px solid rgba(255,255,255,.13);
+    margin-top: 1.75rem;
+  }
+  .service {
+    background: var(--band-ink);
+    padding: 1.05rem 1.25rem;
+    display: flex;
+    gap: 1.25rem;
+    align-items: baseline;
+  }
+  .service dt {
+    font-weight: 600;
+    font-size: var(--step--1);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--band-text);
+    min-width: 8.5rem;
+  }
+  .service dd {
+    margin: 0;
+    font-size: var(--step--1);
+    color: var(--band-muted);
+  }
+
+  /* ---------- archive band ---------- */
+  .archive-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: clamp(1.5rem, 4vw, 3rem);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding-block: clamp(2rem, 4vw, 2.75rem);
+  }
+  .stat .num {
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 300;
+    font-size: var(--step-3);
+    line-height: 1;
+    letter-spacing: -.03em;
+    font-variant-numeric: tabular-nums;
+    display: block;
+    color: var(--accent-2);
+  }
+  .stat .cap {
+    display: block;
+    margin-top: .6rem;
+    font-size: var(--step--1);
+    color: var(--muted);
+    max-width: 24ch;
+  }
+
+  /* ---------- live band ---------- */
+  .live {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    gap: clamp(1.75rem, 5vw, 4rem);
+    padding-block: clamp(2.75rem, 6vw, 4.5rem);
+    align-items: center;
+  }
+  @media (max-width: 820px) { .live { grid-template-columns: 1fr; } }
+  .live h2 {
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 400;
+    font-size: var(--step-2);
+    line-height: 1.12;
+    letter-spacing: -.015em;
+    margin: .8rem 0 0;
+    text-wrap: balance;
+  }
+  .live p { color: var(--muted); max-width: 48ch; }
+  .ticket {
+    border: 1px solid var(--rule);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    display: flex;
+    flex-direction: column;
+    gap: .9rem;
+  }
+  .ticket .when {
+    font-family: "Newsreader", Georgia, serif;
+    font-size: var(--step-2);
+    font-weight: 400;
+    letter-spacing: -.015em;
+    font-variant-numeric: tabular-nums;
+    margin: 0;
+  }
+  .ticket ul { margin: 0; padding-left: 1.1rem; color: var(--muted); font-size: var(--step--1); }
+  .ticket li { margin-bottom: .4rem; }
+  .btn {
+    align-self: flex-start;
+    background: var(--accent-strong);
+    color: var(--on-accent);
+    border: 0;
+    font-family: inherit;
+    font-size: var(--step--1);
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: .75rem 1.4rem;
+    cursor: pointer;
+    transition: transform .15s ease, filter .15s ease;
+  }
+  .btn:hover { filter: brightness(1.08); transform: translateY(-1px); }
+
+  /* ---------- footer ---------- */
+  footer {
+    border-top: 1px solid var(--rule);
+    margin-top: clamp(2.5rem, 5vw, 4rem);
+    padding-block: clamp(2.25rem, 5vw, 3.25rem);
+  }
+  .foot-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+  .foot-mark {
+    font-family: "Newsreader", Georgia, serif;
+    font-size: var(--step-2);
+    letter-spacing: -.02em;
+  }
+  .foot-mark .festival { color: var(--accent); }
+  .foot-tag {
+    font-family: "Newsreader", Georgia, serif;
+    font-style: italic;
+    color: var(--muted);
+    margin: .2rem 0 0;
+  }
+  .foot-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .foot-links a {
+    font-size: var(--step--1);
+    color: var(--muted);
+  }
+  .foot-links a:hover { color: var(--accent); }
+  .colophon {
+    margin-top: 2.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+    font-size: .75rem;
+    color: var(--muted);
+    max-width: 70ch;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+
+</head>
+<body>
+<div class="notice">Concept mockup — not the live IdeaFestival site</div>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <h1 class="wordmark"><span class="idea">Idea</span><span class="festival">Festival</span></h1>
+    <p class="tagline">Stay Curious</p>
+  </div>
+</header>
+
+<nav class="primary">
+  <div class="wrap">
+    <ul>
+      <li><a href="#" aria-current="page">The Beat</a></li>
+      <li><a href="#studio">The Studio</a></li>
+      <li><a href="#archive">The Archive</a></li>
+      <li><a href="#live">Live Edition</a></li>
+      <li><a href="#">Newsletter</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <section class="wrap lead">
+    <article>
+      <span class="kicker">Field note · Nelson County</span>
+      <h2>A rickhouse is a fermentation laboratory that nobody bothered to write down</h2>
+      <p class="standfirst">Kentucky has run the world's longest uncontrolled experiment in microbial chemistry for two centuries, and almost none of it exists as data. A handful of people are trying to change that.</p>
+      <div class="byline">
+        <span>Reported over four visits</span>
+        <span class="dot">·</span>
+        <span>18 min read</span>
+        <span class="dot">·</span>
+        <span>Film runs 6:20</span>
+      </div>
+    </article>
+
+    <aside class="lead-aside">
+      <div class="aside-item">
+        <a href="#">
+          <span class="label">Also today</span>
+          <h3>What a coalfield microgrid learned in its first winter</h3>
+          <p>The engineering held. The billing model did not.</p>
+        </a>
+      </div>
+      <div class="aside-item">
+        <a href="#">
+          <span class="label">From the archive</span>
+          <h3>Four talks about failure, pulled from twenty years of tape</h3>
+          <p>The festival kept asking the same question. The answers changed.</p>
+        </a>
+      </div>
+      <div class="aside-item">
+        <a href="#">
+          <span class="label">Open notebook</span>
+          <h3>Three labs we're following this fall, and why</h3>
+          <p>We publish the beat list. Tell us what we're missing.</p>
+        </a>
+      </div>
+    </aside>
+  </section>
+
+  <div class="wrap section-head">
+    <h2>The Beat</h2>
+    <p>Ideas coming out of Kentucky — the labs, the fields, the plants and the corridors. Not deal announcements.</p>
+  </div>
+
+  <section class="beat">
+    <a class="story" href="#">
+      <span class="beat-label">Lab notes · Lexington</span>
+      <h3>The protein-folding problem, explained by someone who has to teach it</h3>
+      <p>Where the models are load-bearing and where they are still guessing.</p>
+      <span class="meta">Essay + film</span>
+    </a>
+    <a class="story" href="#">
+      <span class="beat-label">Field note · Louisville</span>
+      <h3>Worldport at 3 a.m. is the best logistics classroom in America</h3>
+      <p>Six hours inside the sort, and what it teaches about everything else.</p>
+      <span class="meta">Photo essay</span>
+    </a>
+    <a class="story" href="#">
+      <span class="beat-label">Analysis</span>
+      <h3>The medical corridor keeps inventing devices it cannot manufacture</h3>
+      <p>A gap between invention and production that shows up again and again.</p>
+      <span class="meta">12 min read</span>
+    </a>
+    <a class="story" href="#">
+      <span class="beat-label">Dispatch · Paducah</span>
+      <h3>What happens to a river town when the barges get autonomous</h3>
+      <p>Nobody upstream is planning for it. Downstream, they already are.</p>
+      <span class="meta">Reported</span>
+    </a>
+    <a class="story" href="#">
+      <span class="beat-label">Conversation</span>
+      <h3>Two agronomists argue about whether soil data should be public</h3>
+      <p>They agree on the science and on almost nothing else.</p>
+      <span class="meta">Audio · 41 min</span>
+    </a>
+    <a class="story" href="#">
+      <span class="beat-label">Explainer</span>
+      <h3>How a university patent actually becomes a company</h3>
+      <p>The unglamorous middle that determines whether anything ships.</p>
+      <span class="meta">Series · Part 1 of 4</span>
+    </a>
+  </section>
+
+  <section class="studio" id="studio">
+    <div class="wrap studio-inner">
+      <div>
+        <span class="label">The Studio</span>
+        <h2>You have a paper.<br>You need <em>six minutes of film</em>.</h2>
+      </div>
+      <div class="body">
+        <p>Founders and researchers are now expected to be media-first — personally. Most have no crew, no budget, and no idea where to start. The production cost of good work has collapsed; the judgment it takes has not.</p>
+        <p>We produce for the people we cover, and we teach them to produce for themselves. It funds the publication and it fills the pipeline.</p>
+        <dl class="services">
+          <div class="service"><dt>Field film</dt><dd>One subject, one idea, six to nine minutes.</dd></div>
+          <div class="service"><dt>The essay</dt><dd>Your research, written for people outside it.</dd></div>
+          <div class="service"><dt>Cut for social</dt><dd>The clips that actually travel, made from the film.</dd></div>
+          <div class="service"><dt>Camera school</dt><dd>Two days. You leave able to do it yourself.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap section-head" id="archive">
+    <h2>The Archive</h2>
+    <p>Two decades of tape, most of it never resurfaced. It is the reason this starts with credibility instead of a launch announcement.</p>
+  </div>
+
+  <section class="wrap archive-stats">
+    <div class="stat">
+      <span class="num">500+</span>
+      <span class="cap">Thinkers, doers and innovators who came through the festival</span>
+    </div>
+    <div class="stat">
+      <span class="num">2000</span>
+      <span class="cap">First year on tape — the video archive runs forward from here</span>
+    </div>
+    <div class="stat">
+      <span class="num">4</span>
+      <span class="cap">Days each autumn, in downtown Louisville</span>
+    </div>
+    <div class="stat">
+      <span class="num">30</span>
+      <span class="cap">Years of legal standing behind the entity that holds it</span>
+    </div>
+  </section>
+
+  <section class="wrap live" id="live">
+    <div>
+      <span class="label">The Live Edition</span>
+      <h2>The festival now serves the publication, not the other way around</h2>
+      <p>Not a two-thousand-seat conference — those economics are what failed. A smaller, higher-signal weekend that exists to convene the people we cover and to generate a year of material.</p>
+    </div>
+    <div class="ticket">
+      <p class="when">Autumn 2027</p>
+      <ul>
+        <li>Roughly 300 people, deliberately</li>
+        <li>Every session filmed, every session published</li>
+        <li>Half the stage reserved for people who have never had one</li>
+        <li>Louisville, four days, as it always was</li>
+      </ul>
+      <button class="btn" type="button">Join the list</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-mark"><span>Idea</span><span class="festival">Festival</span></div>
+        <p class="foot-tag">Stay Curious</p>
+      </div>
+      <div class="foot-links">
+        <a href="#">The Beat</a>
+        <a href="#studio">The Studio</a>
+        <a href="#archive">The Archive</a>
+        <a href="#live">Live Edition</a>
+        <a href="#">Pitch us a story</a>
+        <a href="#">Support the work</a>
+      </div>
+    </div>
+    <p class="colophon">Concept mockup, August 2026. Headlines, sessions and dates shown here are illustrative placeholders written to demonstrate the editorial format — they are not real IdeaFestival stories or announcements. Archive figures are drawn from ideafestival.com. Typography and color are a proposed direction; swap in the official wordmark files and brand values before this goes anywhere real.</p>
+  </div>
+</footer>
+</body>
+</html>
